@@ -7,8 +7,12 @@ namespace TodoList.Controllers;
 public class MainController : ControllerBase
 {
     [HttpGet]
-    public string Get()
+    public ContentResult Get()
     {
-        return "Welcome to the todolist api! <br /> Try <a href=\"/swagger/index.html\">Swagger</a>!";
+        return new ContentResult
+        {
+            ContentType = "text/html",
+            Content = "Welcome to the todolist api! <br /> Try <a href=\"/swagger/index.html\">Swagger</a>!"
+        };
     }
 }
